@@ -1,6 +1,6 @@
 import sys
 import mysql.connector
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QLineEdit, QPushButton, QTextBrowser
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QLineEdit, QPushButton, QTextBrowser, QPixmap
 
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
@@ -30,7 +30,7 @@ class VentanaPrincipal(QMainWindow):
         self.setCentralWidget(widget_principal)
         
         fondo = QLabel(self)
-        pixmap = QPixmap("D:\User\Downloads\WhatsApp.jpeg")
+        pixmap = QPixmap("D:\User\Downloads\looking_for_adventures.jpg")
         fondo.setPixmap(pixmap)
         fondo.resize(pixmap.width(), pixmap.height())
         fondo.setStyleSheet("position: absolute;")
