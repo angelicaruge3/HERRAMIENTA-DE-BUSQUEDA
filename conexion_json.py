@@ -45,7 +45,7 @@ cursor.execute(sql)
 sensores = cursor.fetchall()
 #Recorrer los resultadoe e imprimirlos
 for datos in sensores:
-    print(f"looking_for_adventures: {datos}")
+    print(f"libros: {datos}")
 #Cerrar el cursor y la conecxion a bd
 cursor.close()
 conexion.close()
