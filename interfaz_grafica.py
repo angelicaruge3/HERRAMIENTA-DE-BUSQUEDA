@@ -28,6 +28,15 @@ class VentanaPrincipal(QMainWindow):
 
         # Establecer el widget principal como el widget central de la ventana
         self.setCentralWidget(widget_principal)
+        
+        fondo = QLabel(self)
+        pixmap = QPixmap("D:\User\Downloads\WhatsApp.jpeg")
+        fondo.setPixmap(pixmap)
+        fondo.resize(pixmap.width(), pixmap.height())
+        fondo.setStyleSheet("position: absolute;")
+        
+        def resizeEvent(self, event):
+            self.centralWidget().resize(event.size())
 
         # Conectar a la base de datos MySQL
         self.conexion = mysql.connector.connect(
