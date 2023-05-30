@@ -17,7 +17,7 @@ cursor.execute(sql)
 sensores = cursor.fetchall()
 
 for datos in sensores:
-    print(f"datos looking_for_adventures: {datos}")
+    print(f"datos libros: {datos}")
     
 cursor.close()
 conexion.close()
