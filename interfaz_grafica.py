@@ -1,6 +1,6 @@
 import sys
 import mysql.connector
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QLineEdit, QPushButton, QTextBrowser, QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QLineEdit, QPushButton, QTextBrowser
 
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
@@ -28,15 +28,6 @@ class VentanaPrincipal(QMainWindow):
 
         # Establecer el widget principal como el widget central de la ventana
         self.setCentralWidget(widget_principal)
-        
-        fondo = QLabel(self)
-        pixmap = QPixmap("D:\User\Downloads\looking_for_adventures.jpg")
-        fondo.setPixmap(pixmap)
-        fondo.resize(pixmap.width(), pixmap.height())
-        fondo.setStyleSheet("position: absolute;")
-        
-        def resizeEvent(self, event):
-            self.centralWidget().resize(event.size())
 
         # Conectar a la base de datos MySQL
         self.conexion = mysql.connector.connect(
@@ -64,7 +55,7 @@ class VentanaPrincipal(QMainWindow):
                 self.resultados_busqueda.append(f"año_publicacion: {resultado[1]}")
                 self.resultados_busqueda.append(f"genero: {resultado[2]}")
                 self.resultados_busqueda.append(f"sinopsis: {resultado[3]}")
-                self.resultados_busqueda.append(f"id_autor: {resultado[4]}")
+                self.resultados_busqueda.append("")
         else:
             self.resultados_busqueda.append("No se encontraron resultados.")
 
